@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casa Abierta - Centro Educativo y Comunitario</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0033A0;
+      --secondary-color: #0066CC;
+      --accent-color: #27AE60;
+      --dark-color: #1A252F;
+      --light-color: #ECF0F1;
+      --success-color: #27AE60;
+      --warning-color: #F39C12;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #E3F2FD 0%, #F8F9FA 100%);
+      min-height: 100vh;
+      color: var(--dark-color);
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,51,160,0.1);
+      border-bottom: 3px solid var(--accent-color);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: white !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--accent-color) !important;
+      transform: translateY(-2px);
+    }
+
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(0,51,160,0.9) 0%, rgba(0,102,204,0.9) 100%),
+                  url('Casa Abierta.jpg') center/cover;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255,255,255,0.1);
+      z-index: 1;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+
+    .hero .btn {
+      background: linear-gradient(135deg, var(--accent-color) 0%, #2ECC71 100%);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      color: white;
+      transition: all 0.3s ease;
+      margin: 0 0.5rem;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+
+    .hero .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(39,174,96,0.4);
+      background: linear-gradient(135deg, #2ECC71 0%, var(--accent-color) 100%);
+    }
+
+    /* Services Section */
+    .services {
+      padding: 5rem 0;
+      background: var(--light-color);
+    }
+
+    .services h2 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .services h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      border-radius: 2px;
+    }
+
+    .workshop-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .workshop-btn {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      min-width: 200px;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .workshop-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,51,160,0.3);
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      color: white;
+      text-decoration: none;
+    }
+
+    .workshop-btn i {
+      margin-right: 0.5rem;
+    }
+
+    /* About Section */
+    .about {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+    }
+
+    .about h2 {
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .about .row {
+      align-items: center;
+    }
+
+    .about img {
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    .about-text h3 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      line-height: 1.8;
+      opacity: 0.95;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 5rem 0;
+      background: var(--light-color);
+    }
+
+    .contact h2 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      border: 1px solid #E2E8F0;
+    }
+
+    .form-control {
+      border: 2px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(0,51,160,0.1);
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      color: white;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,51,160,0.3);
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    }
+
+    .contact-info {
+      background: white;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      border: 1px solid #E2E8F0;
+    }
+
+    .contact-info h3 {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item i {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      width: 30px;
+    }
+
+    .contact-item p {
+      margin: 0;
+      color: #718096;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-color);
+      color: white;
+      padding: 3rem 0 1rem;
+    }
+
+    footer h3 {
+      color: white;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    footer p, footer a {
+      color: #E2E8F0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent-color);
+    }
+
+    .social-links {
+      margin-top: 2rem;
+    }
+
+    .social-links a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      margin-right: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(39,174,96,0.4);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #0066CC;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      text-align: center;
+      color: #E2E8F0;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      .workshop-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .workshop-btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .about .row {
+        text-align: center;
+      }
+
+      .about img {
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-home me-2"></i>Casa Abierta
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#servicios">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#nosotros">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <h1>¡Bienvenidos a Casa Abierta!</h1>
+      <p>Un espacio donde la educación y la comunidad se unen para crear oportunidades ilimitadas</p>
+      <a href="#servicios" class="btn">Explorar Servicios</a>
+      <a href="#contacto" class="btn">Contáctanos</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="servicios">
+    <div class="container">
+      <h2>Talleres Vocacionales</h2>
+      <div class="workshop-buttons">
+        <a href="computec.html" class="workshop-btn">
+          <i class="fas fa-laptop"></i>Computec
+        </a>
+        <a href="mercadeo.html" class="workshop-btn">
+          <i class="fas fa-chart-line"></i>Mercadeo
+        </a>
+        <a href="enfermeria.html" class="workshop-btn">
+          <i class="fas fa-user-md"></i>Enfermería
+        </a>
+        <a href="cosmetologia.html" class="workshop-btn">
+          <i class="fas fa-spa"></i>Cosmetología
+        </a>
+        <a href="artes-culinarias.html" class="workshop-btn">
+          <i class="fas fa-utensils"></i>Artes Culinarias
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="nosotros">
+    <div class="container">
+      <h2>Sobre Casa Abierta</h2>
+      <div class="row">
+        <div class="col-12 text-center about-text">
+          <h3>Nuestra Misión</h3>
+          <p>Casa Abierta es un centro educativo y comunitario dedicado a proporcionar oportunidades de aprendizaje excepcionales y fomentar el desarrollo integral de individuos y comunidades. Creemos en el poder transformador de la educación y trabajamos incansablemente para crear un entorno donde todos puedan prosperar.</p>
+          <h3>Nuestra Visión</h3>
+          <p>Ser el referente líder en educación comunitaria innovadora, donde la excelencia académica se combina con el compromiso social para construir un futuro más brillante para todos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <h2>Contáctanos</h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="contact-form">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Nombre completo" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Correo electrónico" required>
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control" placeholder="Teléfono">
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-submit">Enviar Mensaje</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="contact-info">
+            <h3>Información de Contacto</h3>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <p><strong>Dirección física de la escuela:</strong> Carretera 156 salida hacia Comerío, Barranquitas, P. R.</p>
+                <p><strong>Dirección postal de la escuela:</strong> Box 1030 Barranquitas, P. R. 00794</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <p><strong>Teléfono:</strong></p>
+                <p>+1 787-857-2897</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <p><strong>Email de la consejera:</strong></p>
+                <p>de58390@miescuela.pr</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <p><strong>Horario:</strong></p>
+                <p>Lunes - Viernes: 7:30 AM - 2:30 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h3>Casa Abierta</h3>
+          <p>Un espacio donde la educación y la comunidad se unen para crear oportunidades ilimitadas.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/p/Escuela-Superior-Vocacional-Pablo-Col%C3%B3n-Berdecia-100057389681928/?locale=es_LA" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h3>Enlaces Rápidos</h3>
+          <ul class="list-unstyled">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Casa Abierta. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
