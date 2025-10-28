@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elaboración de Productos Agrícolas - Casa Abierta</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0033A0;
+      --secondary-color: #0066CC;
+      --accent-color: #27AE60;
+      --dark-color: #1A252F;
+      --light-color: #ECF0F1;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light-color);
+      color: var(--dark-color);
+    }
+
+    .navbar {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+      box-shadow: 0 4px 20px rgba(0,51,160,0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: white !important;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .hero .badge {
+      background: var(--accent-color);
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .content-section {
+      padding: 4rem 0;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      border: 2px solid #E2E8F0;
+    }
+
+    .info-card h3 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .info-card h3 i {
+      margin-right: 0.5rem;
+      color: var(--accent-color);
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+    }
+
+    .feature-list li:last-child {
+      border-bottom: none;
+    }
+
+    .feature-list li i {
+      color: var(--accent-color);
+      margin-right: 1rem;
+      width: 20px;
+    }
+
+    .btn-back {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-back:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,51,160,0.3);
+      color: white;
+      text-decoration: none;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #FFF3CD 0%, #FFEAA7 100%);
+      border: 2px solid #F39C12;
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .highlight-box h4 {
+      color: #8B4513;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-home me-2"></i>Casa Abierta
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav justify-content-center w-100">
+          <li class="nav-item">
+            <a class="nav-link text-center" href="index.html"><i class="fas fa-home me-2"></i>Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-center" href="index.html#servicios"><i class="fas fa-cogs me-2"></i>Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-center" href="index.html#contacto"><i class="fas fa-envelope me-2"></i>Contacto</a>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown ms-2">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" id="menuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+          <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
+          <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1><i class="fas fa-wheat me-3"></i>Programa de Elaboración de Productos Agrícolas</h1>
+      <p class="lead">Procesamiento y Desarrollo de Productos Agrícolas</p>
+      <span class="badge">3 años académicos</span>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <div class="container content-section">
+    <!-- Descripción -->
+    <div class="info-card">
+      <h3><i class="fas fa-info-circle"></i>Descripción del Programa</h3>
+      <p>Un producto agrícola se refiere a aquellas plantas que se pueden cultivar y cosechar extensivamente sus derivados con fines de lucro o de subsistencia. Los productos agrícolas pueden referirse a las partes cosechadas o a la cosecha en un estado más refinado. Además se incluye dentro del procesamiento los productos pecuarios o derivados de los animales de la finca. Es un curso en dónde se trabaja con la transformación de productos agrícolas, tanto de origen animal como vegetal, para obtener mejores productos alimenticios y subproductos útiles a la humanidad. El procesamiento tiene como objetivo la mejor conservación de los productos agrícolas así como una mayor diversificación en lo que se refiere a su presentación, lo cual se puede realizar a pequeña y gran escala.</p>
+    </div>
+
+    <!-- Requisitos -->
+    <!-- Requisitos de Admisión -->
+<div class="info-card">
+  <h3><i class="fas fa-clipboard-check"></i>Requisitos de Admisión</h3>
+  <ul class="feature-list text-center">
+    <li><i class="fas fa-graduation-cap"></i>Ser graduado de noveno grado.</li>
+    <li><i class="fas fa-chart-line"></i>Mantener un promedio académico mínimo de 2.00 puntos o más.</li>
+    <li><i class="fas fa-clipboard-list"></i>Completar la solicitud de admisión al programa vocacional.</li>
+    <li><i class="fas fa-comments"></i>Participar en entrevista con el maestro coordinador y el orientador vocacional.</li>
+    <li><i class="fas fa-seedling"></i>Demostrar interés por la agricultura, los procesos de conservación y la elaboración de alimentos.</li>
+    <li><i class="fas fa-hands-helping"></i>Poseer responsabilidad, disciplina y habilidades para el trabajo en equipo.</li>
+    <li><i class="fas fa-clock"></i>Demostrar puntualidad y compromiso con las tareas asignadas.</li>
+    <li><i class="fas fa-shield-alt"></i>Seguir las normas de seguridad e higiene alimentaria establecidas en el programa.</li>
+    <li><i class="fas fa-leaf"></i>Mostrar respeto por el medio ambiente y la sostenibilidad agrícola.</li>
+    <li><i class="fas fa-user-check"></i>Contar con el consentimiento de los padres o encargados.</li>
+  </ul>
+</div>
+
+
+    <!-- Información del Maestro -->
+    <div class="info-card">
+      <h3><i class="fas fa-user-graduate"></i>Información del Maestro</h3>
+      <p><strong>Nombre:</strong> Luis Ríos Berríos</p>
+      <p><strong>Años de experiencia:</strong> 3 años</p>
+      <p><strong>Correo electrónico:</strong> de109026@miescuela.pr</p>
+      <p><strong>Correo electrónico:</strong> d20560@de.pr.gov</p>
+    </div>
+
+    <!-- Cursos Principales -->
+    <div class="info-card">
+      <h3><i class="fas fa-book"></i>Cursos Principales</h3>
+      <div class="row">
+        <div class="col-12">
+          <ul class="feature-list text-center">
+            <li><i class="fas fa-seedling"></i>Introducción a la Agricultura</li>
+            <li><i class="fas fa-cogs"></i>Procesamiento de Alimentos</li>
+            <li><i class="fas fa-flask"></i>Química de Alimentos</li>
+            <li><i class="fas fa-box"></i>Empaque y Conservación</li>
+            <li><i class="fas fa-chart-bar"></i>Gestión de Calidad</li>
+            <li><i class="fas fa-tractor"></i>Mecánica Agrícola</li>
+            <li><i class="fas fa-leaf"></i>Botánica y Fitopatología</li>
+            <li><i class="fas fa-shopping-cart"></i>Comercialización de Productos Agrícolas</li>
+            <li><i class="fas fa-recycle"></i>Sostenibilidad Ambiental</li>
+            <li><i class="fas fa-utensils"></i>Nutrición y Alimentación</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Perspectiva de Empleo -->
+    <div class="info-card">
+      <h3><i class="fas fa-briefcase"></i>Perspectiva de Empleo</h3>
+      <div class="row">
+        <div class="col-12">
+          <ul class="feature-list text-center">
+            <li><i class="fas fa-user-tie"></i>Trabajar en plantas de procesamiento de alimentos, cooperativas agrícolas, laboratorios de calidad, empresas de empaque y distribución de productos agrícolas. Oportunidades como técnico en procesamiento, supervisor de calidad, gerente de producción agrícola y emprendedor en negocios relacionados con la agricultura sostenible.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Highlight Box -->
+    <div class="highlight-box">
+      <h4><i class="fas fa-star"></i>¿Por qué elegir Elaboración de Productos Agrícolas?</h4>
+      <p>En un mundo que demanda alimentos saludables y sostenibles, este programa te prepara para ser parte de la cadena de valor agrícola, desde la cosecha hasta el consumidor final.</p>
+    </div>
+
+    <!-- Botón -->
+    <div class="text-center">
+      <a href="index.html" class="btn-back">
+        <i class="fas fa-arrow-left me-2"></i>Volver al Inicio
+      </a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
